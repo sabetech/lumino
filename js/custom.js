@@ -61,7 +61,11 @@ function makeTables() {
 			{ "data": "student_name" },
 			{ "data": "student_class" },
 			{ "data": "timestamp" }
-		]
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true
 	});
 	$('#pillar-lecture-table').DataTable({
 		"language": {
@@ -73,7 +77,11 @@ function makeTables() {
 			{ "data": "student_name" },
 			{ "data": "student_class" },
 			{ "data": "timestamp" }
-		]
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true
 	});
 	$('#reg-student-table').DataTable({
 		"ajax" : $root_url+"read_students.php",
@@ -83,7 +91,11 @@ function makeTables() {
 			{ "data": "student_name" },
 			{ "data": "student_class" },
 			{ "data": "created_at" }
-		]
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true
 	});
 }
 

@@ -9,7 +9,7 @@
     <link href="css/datepicker3.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/theme-rose.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.24/b-1.7.0/date-1.0.3/r-2.2.7/rr-1.2.7/datatables.min.css"/>
 
 
     <style>
@@ -42,15 +42,15 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <div class="profile-sidebar">
         <div class="profile-usertitle">
-            <div class="profile-usertitle-name">Ebenezer - Dev</div>
+            <div class="profile-usertitle-name"> - Admin</div>
         </div>
         <div class="clear"></div>
     </div>
     <div class="divider"></div>
     <ul class="nav menu">
         <li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-        <li class=""><a href="reg_students.php"><em class="fa fa-dashboard">&nbsp;</em> Registered Students</a></li>
-        <li class=""><a href="today_vision.php"><em class="fa fa-dashboard">&nbsp;</em> Today's Vision Lectures</a></li>
-        <li class=""><a href="today_pillar.php"><em class="fa fa-dashboard">&nbsp;</em> Today's Pillar Lectures</a></li>
+        <li class=""><a href="reg_students.php"><em class="fa fa-list-alt">&nbsp;</em> Registered Students</a></li>
+        <li class=""><a href="today_vision.php"><em class="fa fa-television">&nbsp;</em> Vision Lectures</a></li>
+        <li class=""><a href="today_pillar.php"><em class="fa fa-youtube-play">&nbsp;</em> Pillar Lectures</a></li>
     </ul>
 </div><!--/.sidebar-->
