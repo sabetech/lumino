@@ -1,7 +1,14 @@
-$('#calendar').datepicker({
-		});
 
-!function ($) {
+$root_url = "https://abs-att-back.000webhostapp.com/api/";
+$myRoot_url = "https://anagkazo.firstlovegallery.com/api/";
+
+//$(".input-group.date").datepicker("setDate", new Date());
+$('.input-group.date').datepicker({
+	todayHighlight: true,
+	format:'yyyy-mm-dd'
+}).datepicker("setDate",'now');
+
+!function ($) {	
     $(document).on("click","ul.nav li.parent > a ", function(){          
         $(this).find('em').toggleClass("fa-minus");      
     }); 
@@ -29,12 +36,12 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 	}
 })
 
-$root_url = "https://abs-att-back.000webhostapp.com/api/";
+
 
 
 function getUsers() {
 	$.ajax({
-		url: $root_url+'count_users.php',
+		url: $myRoot_url+'anagkazo/students/count',
 		type: 'get',
 		dataType: 'JSON',
 		beforeSend: function () {
@@ -42,7 +49,7 @@ function getUsers() {
 			$(".r_loading-spin").addClass('spin-big');
 		},
 		success: function (response) {
-			$("#reg_students").html(response);
+			$("#reg_students").html(response.count);
 
 			$(".r_loading-spin").addClass('hidden')
 			$("#reg_students").removeClass('hidden');
@@ -99,29 +106,48 @@ function makeTables() {
 	});
 }
 
-function getScans() {
+function getVisionLectureScans(date) {
 	$.ajax({
-		url: $root_url+'count_today.php',
+		url: $myRoot_url+`anagkazo/attendance/vision?date=${date}`,
 		type: 'get',
 		dataType: 'JSON',
 		beforeSend: function () {
-			$("#today-scan").addClass('hidden');
+			$("#vision-lecture-scan").addClass('hidden');
 			$(".loading-spin").addClass('spin-big');
 		},
 		success: function (response) {
-			$("#today-scan").html(response);
+			$("#vision-lecture-scan").html(response.count);
 
 			$(".loading-spin").addClass('hidden')
-			$("#today-scan").removeClass('hidden');
+			$("#vision-lecture-scan").removeClass('hidden');
 		}
 	});
 }
+
+function getPillarLectureScans(date){
+	$.ajax({
+		url: $myRoot_url+`anagkazo/attendance/pillar?date=${date}`,
+		type: 'get',
+		dataType: 'JSON',
+		beforeSend: function () {
+			$("#pillar-lecture-scan").addClass('hidden');
+			$(".loading-spin").addClass('spin-big');
+		},
+		success: function (response) {
+			$("#pillar-lecture-scan").html(response.count);
+
+			$(".loading-spin").addClass('hidden')
+			$("#pillar-lecture-scan").removeClass('hidden');
+		}
+	});
+}
+
 $(document).ready(function () {
-	getScans();
+	let curdate = $('#date-val').val()
+
+	getVisionLectureScans(curdate);
+	getPillarLectureScans(curdate);
 	getUsers();
 	makeTables();
-
-
-
 
 });
