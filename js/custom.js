@@ -2,11 +2,39 @@
 $root_url = "https://abs-att-back.000webhostapp.com/api/";
 $myRoot_url = "https://anagkazo.firstlovegallery.com/api/";
 
+let x = {
+	myDateInternal: new Date().toISOString().substring(0, 10),
+	myDateListener: function(val) {},
+	set myDate(val) {
+		this.myDateInternal = val;
+		this.myDateListener(val);
+	},
+	get myDate() {
+		return this.myDateInternal;
+	},
+	registerListener: function(listener) {
+		this.myDateListener = listener;
+	}
+}
+
+x.registerListener(function(val) {
+	alert("Someone changed the value of x.date to " + val);
+});
+
 //$(".input-group.date").datepicker("setDate", new Date());
 $('.input-group.date').datepicker({
 	todayHighlight: true,
+	autoclose: true,
 	format:'yyyy-mm-dd'
 }).datepicker("setDate",'now');
+
+$('.input-group.date').datepicker()
+    .on('changeDate', function(e) {
+		
+		x.myDate = e.date.toISOString().split('T')[0];
+		//console.log(e.date.getFullYear() +"-"+(e.date.getMonth() + 1)+"-"+e.date.getDate());
+        //x.myDate = e.date.getFullYear() +"-"+(e.date.getMonth() + 1)+"-"+e.date.getDate();
+    });
 
 !function ($) {	
     $(document).on("click","ul.nav li.parent > a ", function(){          
@@ -60,14 +88,15 @@ function getUsers() {
 function makeTables() {
 	$('#vision-lecture-table').DataTable({
 		"language": {
-			"emptyTable": "Everyone's absent!"
+			"emptyTable": "Nobody Present for the Date selected"
 		},
-		"ajax" : $root_url+"read_all_today_vision_lecture.php",
+		"ajax" : $myRoot_url+"anagkazo/visionlectures?date="+x.myDate,
 		"columns": [
 			{ "data": "student_id" },
-			{ "data": "student_name" },
-			{ "data": "student_class" },
-			{ "data": "timestamp" }
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "batch" },
+			{ "data": "created_at" }
 		],
 		rowReorder: {
 			selector: 'td:nth-child(2)'
@@ -76,27 +105,29 @@ function makeTables() {
 	});
 	$('#pillar-lecture-table').DataTable({
 		"language": {
-			"emptyTable": "Everyone's absent!"
+			"emptyTable": "Nobody's Present for the Date Selected"
 		},
-		"ajax" : $root_url+"read_all_today_pillar_lecture.php",
+		"ajax" : $myRoot_url+"anagkazo/pillarlectures?date="+x.myDate,
 		"columns": [
 			{ "data": "student_id" },
-			{ "data": "student_name" },
-			{ "data": "student_class" },
-			{ "data": "timestamp" }
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "batch" },
+			{ "data": "created_at" }
 		],
 		rowReorder: {
 			selector: 'td:nth-child(2)'
 		},
 		responsive: true
 	});
+
 	$('#reg-student-table').DataTable({
-		"ajax" : $root_url+"read_students.php",
+		"ajax" : $myRoot_url+"anagkazo/students",
 		"columns": [
-			{ "data": "id" },
-			{ "data": "student_id" },
-			{ "data": "student_name" },
-			{ "data": "student_class" },
+			{ "data" : "id" },
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "batch" },
 			{ "data": "created_at" }
 		],
 		rowReorder: {
@@ -143,11 +174,14 @@ function getPillarLectureScans(date){
 }
 
 $(document).ready(function () {
-	let curdate = $('#date-val').val()
-
-	getVisionLectureScans(curdate);
-	getPillarLectureScans(curdate);
-	getUsers();
-	makeTables();
+	console.log(x.myDate);
+	getValues();
 
 });
+
+function getValues() {
+	getVisionLectureScans(x.myDate);
+	getPillarLectureScans(x.myDate);
+	getUsers();
+	makeTables();
+}
