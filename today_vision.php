@@ -42,18 +42,22 @@
                                 <table class="table" id="vision-lecture-table">
                                     <thead>
                                         <tr>
+                                            <th scope="col">S/n</th>
+                                            <th scope="col">Index Number</th>
                                             <th scope="col">Name</th>
-                                            <th scope="col">Index</th>
-                                            <th scope="col">Class</th>
                                             <th scope="col">Time</th>
+                                            <th scope="col">Batch</th>
+                                            <th scope="col">Date</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th scope="col">S/n</th>
+                                            <th scope="col">Index Number</th>
                                             <th scope="col">Name</th>
-                                            <th scope="col">Index</th>
-                                            <th scope="col">Class</th>
                                             <th scope="col">Time</th>
+                                            <th scope="col">Batch</th>
+                                            <th scope="col">Date</th>
                                         </tr>
                                     </tfoot>
 

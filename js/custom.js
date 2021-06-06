@@ -18,7 +18,10 @@ let x = {
 }
 
 x.registerListener(function(val) {
-	alert("Someone changed the value of x.date to " + val);
+	//date has changed
+	console.log(x.myDate);
+	fetchValues();
+
 });
 
 //$(".input-group.date").datepicker("setDate", new Date());
@@ -30,10 +33,7 @@ $('.input-group.date').datepicker({
 
 $('.input-group.date').datepicker()
     .on('changeDate', function(e) {
-		
 		x.myDate = e.date.toISOString().split('T')[0];
-		//console.log(e.date.getFullYear() +"-"+(e.date.getMonth() + 1)+"-"+e.date.getDate());
-        //x.myDate = e.date.getFullYear() +"-"+(e.date.getMonth() + 1)+"-"+e.date.getDate();
     });
 
 !function ($) {	
@@ -85,40 +85,48 @@ function getUsers() {
 	});
 }
 
+let visionTable;
 function makeTables() {
-	$('#vision-lecture-table').DataTable({
+	 visionTable = $('#vision-lecture-table').DataTable({
 		"language": {
 			"emptyTable": "Nobody Present for the Date selected"
 		},
 		"ajax" : $myRoot_url+"anagkazo/visionlectures?date="+x.myDate,
 		"columns": [
-			{ "data": "student_id" },
+			{ "data": "id" },
 			{ "data": "admission_no" },
 			{ "data": "name" },
+			{ "data": "time"},
 			{ "data": "batch" },
-			{ "data": "created_at" }
+			{ "data": "date" }
 		],
 		rowReorder: {
 			selector: 'td:nth-child(2)'
 		},
-		responsive: true
+		responsive: true,
+		retrieve: true
 	});
+
+
+
 	$('#pillar-lecture-table').DataTable({
 		"language": {
 			"emptyTable": "Nobody's Present for the Date Selected"
 		},
 		"ajax" : $myRoot_url+"anagkazo/pillarlectures?date="+x.myDate,
 		"columns": [
-			{ "data": "student_id" },
+			{ "data": "id" },
 			{ "data": "admission_no" },
 			{ "data": "name" },
+			{ "data": "time"},
 			{ "data": "batch" },
-			{ "data": "created_at" }
+			{ "data": "date" }
 		],
 		rowReorder: {
 			selector: 'td:nth-child(2)'
 		},
-		responsive: true
+		responsive: true,
+		retrieve: true
 	});
 
 	$('#reg-student-table').DataTable({
@@ -137,8 +145,10 @@ function makeTables() {
 	});
 }
 
+let vision_count_table;
 function getVisionLectureScans(date) {
-	$.ajax({
+	
+	vision_count_table = $.ajax({
 		url: $myRoot_url+`anagkazo/attendance/vision?date=${date}`,
 		type: 'get',
 		dataType: 'JSON',
@@ -155,8 +165,9 @@ function getVisionLectureScans(date) {
 	});
 }
 
+let pillar_count_table;
 function getPillarLectureScans(date){
-	$.ajax({
+	pillar_count_table = $.ajax({
 		url: $myRoot_url+`anagkazo/attendance/pillar?date=${date}`,
 		type: 'get',
 		dataType: 'JSON',
@@ -184,4 +195,9 @@ function getValues() {
 	getPillarLectureScans(x.myDate);
 	getUsers();
 	makeTables();
+}
+
+function fetchValues(){
+	//vision_count_table.ajax.url(`${myRoot_url}anagkazo/attendance/vision?date=${x.myDate}`).load();
+	visionTable.ajax.url($myRoot_url+`anagkazo/attendance/vision?date=${x.myDate}`).load();
 }
