@@ -1,6 +1,6 @@
 
-$root_url = "https://abs-att-back.000webhostapp.com/api/";
-$myRoot_url = "https://anagkazo.firstlovegallery.com/api/";
+//$root_url = "https://abs-att-back.000webhostapp.com/api/";
+let myRoot_url = "https://anagkazo.firstlovegallery.com/api/";
 
 let x = {
 	myDateInternal: new Date().toISOString().substring(0, 10),
@@ -19,7 +19,8 @@ let x = {
 
 x.registerListener(function(val) {
 	//date has changed
-	console.log(x.myDate);
+	console.log("Does anything happen here?")
+	console.log(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`);
 	fetchValues();
 
 });
@@ -69,7 +70,7 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 
 function getUsers() {
 	$.ajax({
-		url: $myRoot_url+'anagkazo/students/count',
+		url: `${myRoot_url}anagkazo/students/count`,
 		type: 'get',
 		dataType: 'JSON',
 		beforeSend: function () {
@@ -91,7 +92,7 @@ function makeTables() {
 		"language": {
 			"emptyTable": "Nobody Present for the Date selected"
 		},
-		"ajax" : $myRoot_url+"anagkazo/visionlectures?date="+x.myDate,
+		"ajax" : `${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`,
 		"columns": [
 			{ "data": "id" },
 			{ "data": "admission_no" },
@@ -113,7 +114,7 @@ function makeTables() {
 		"language": {
 			"emptyTable": "Nobody's Present for the Date Selected"
 		},
-		"ajax" : $myRoot_url+"anagkazo/pillarlectures?date="+x.myDate,
+		"ajax" : `${myRoot_url}anagkazo/pillarlectures?date=${x.myDate}`,
 		"columns": [
 			{ "data": "id" },
 			{ "data": "admission_no" },
@@ -130,7 +131,7 @@ function makeTables() {
 	});
 
 	$('#reg-student-table').DataTable({
-		"ajax" : $myRoot_url+"anagkazo/students",
+		"ajax" : `${myRoot_url}anagkazo/students`,
 		"columns": [
 			{ "data" : "id" },
 			{ "data": "admission_no" },
@@ -145,11 +146,10 @@ function makeTables() {
 	});
 }
 
-let vision_count_table;
 function getVisionLectureScans(date) {
 	
 	vision_count_table = $.ajax({
-		url: $myRoot_url+`anagkazo/attendance/vision?date=${date}`,
+		url: `${myRoot_url}anagkazo/attendance/vision?date=${date}`,
 		type: 'get',
 		dataType: 'JSON',
 		beforeSend: function () {
@@ -165,10 +165,9 @@ function getVisionLectureScans(date) {
 	});
 }
 
-let pillar_count_table;
 function getPillarLectureScans(date){
-	pillar_count_table = $.ajax({
-		url: $myRoot_url+`anagkazo/attendance/pillar?date=${date}`,
+	$.ajax({
+		url: `${myRoot_url}anagkazo/attendance/pillar?date=${date}`,
 		type: 'get',
 		dataType: 'JSON',
 		beforeSend: function () {
@@ -198,6 +197,12 @@ function getValues() {
 }
 
 function fetchValues(){
-	//vision_count_table.ajax.url(`${myRoot_url}anagkazo/attendance/vision?date=${x.myDate}`).load();
-	visionTable.ajax.url($myRoot_url+`anagkazo/attendance/vision?date=${x.myDate}`).load();
+	
+	getVisionLectureScans(x.myDate);
+	getPillarLectureScans(x.myDate);
+	
+	visionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`);
+	visionTable.ajax.reload();
+	console.log(visionTable);
+	
 }

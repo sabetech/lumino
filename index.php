@@ -47,7 +47,7 @@
             <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
                 <a href="today_vision.php">
                     <div class="panel panel-teal panel-widget border-right">
-                        <div class="row no-padding"><em class="fa fa-xl fa-shopping-cart color-blue"></em>
+                        <div class="row no-padding"><em class="fa fa-xl fa-eye color-blue"></em>
                             <i class="fa fa-spinner fa-spin loading-spin"></i>
                             <div class="large" id="vision-lecture-scan">-</div>
                             <div class="text-muted">Today's Vision Lecture</div>
@@ -57,13 +57,23 @@
             </div>
             <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
                 <div class="panel panel-blue panel-widget border-right">
-                    <div class="row no-padding"><em class="fa fa-xl fa-comments color-orange"></em>
+                    <div class="row no-padding"><em class="fa fa-xl fa-play color-orange"></em>
                         <i class="fa fa-spinner fa-spin loading-spin"></i>
                         <div class="large" id="pillar-lecture-scan">-</div>
                         <div class="text-muted">Today's Pillar Lecture</div>
                     </div>
                 </div>
             </div>
+            <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+                <div class="panel panel-blue panel-widget border-right">
+                    <div class="row no-padding"><em class="fa fa-xl fa-toolbox color-teal"></em>
+                        <i class="fa fa-spinner fa-spin loading-spin"></i>
+                        <div class="large" id="bmcdr-scan">-</div>
+                        <div class="text-muted">Today's BMCDR Attendance</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!--/.row-->
     </div>
