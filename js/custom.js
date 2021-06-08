@@ -19,8 +19,6 @@ let x = {
 
 x.registerListener(function(val) {
 	//date has changed
-	console.log("Does anything happen here?")
-	console.log(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`);
 	fetchValues();
 
 });
@@ -105,8 +103,49 @@ function makeTables() {
 			selector: 'td:nth-child(2)'
 		},
 		responsive: true,
-		retrieve: true
+		retrieve: true,
+		buttons: [
+			{
+				extend: 'csvHtml5',
+				text: 'Copy all data',
+				exportOptions: {
+					modifier: {
+						search: 'none'
+					}
+				}
+			}
+		]
 	});
+	
+	absenteesVisionTable = $('#vision-lecture-table-absentees').DataTable({
+		"language": {
+			"emptyTable": "Nobody Present for the Date selected"
+		},
+		"ajax" : `${myRoot_url}anagkazo/visionlectures/absentees?date=${x.myDate}`,
+		"columns": [
+			{ "data": "id" },
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "batch" }
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true,
+		retrieve: true,
+		buttons: [
+			{
+				extend: 'csvHtml5',
+				text: 'Copy all data',
+				exportOptions: {
+					modifier: {
+						search: 'none'
+					}
+				}
+			}
+		]
+	});
+	
 
 
 
@@ -201,8 +240,6 @@ function fetchValues(){
 	getVisionLectureScans(x.myDate);
 	getPillarLectureScans(x.myDate);
 	
-	visionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`);
-	visionTable.ajax.reload();
-	console.log(visionTable);
+	visionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`).load();
 	
 }
