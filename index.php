@@ -67,13 +67,15 @@
                 </a>
             </div>
             <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-                <div class="panel panel-blue panel-widget border-right">
-                    <div class="row no-padding"><em class="fa fa-xl fa-toolbox color-teal"></em>
-                        <i class="fa fa-spinner fa-spin loading-spin"></i>
-                        <div class="large" id="bmcdr-scan">-</div>
-                        <div class="text-muted">Today's BMCDR Attendance</div>
+                <a href="today_bmcdr.php">
+                    <div class="panel panel-blue panel-widget border-right">
+                        <div class="row no-padding"><em class="fa fa-xl fa-toolbox color-teal"></em>
+                            <i class="fa fa-spinner fa-spin loading-spin"></i>
+                            <div class="large" id="bmcdr-scan">-</div>
+                            <div class="text-muted">Today's BMCDR Attendance</div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
         </div>

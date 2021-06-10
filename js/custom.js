@@ -239,6 +239,24 @@ function getPillarLectureScans(date){
 	});
 }
 
+function getBMCDRScans(date){
+	$.ajax({
+		url: `${myRoot_url}anagkazo/attendance/bmcdr?date=${date}`,
+		type: 'get',
+		dataType: 'JSON',
+		beforeSend: function () {
+			$("#bmcdr-scan").addClass('hidden');
+			$(".loading-spin").addClass('spin-big');
+		},
+		success: function (response) {
+			$("#bmcdr-scan").html(response.count);
+
+			$(".loading-spin").addClass('hidden')
+			$("#bmcdr-scan").removeClass('hidden');
+		}
+	});
+}
+
 $(document).ready(function () {
 	console.log(x.myDate);
 	getValues();
@@ -248,6 +266,7 @@ $(document).ready(function () {
 function getValues() {
 	getVisionLectureScans(x.myDate);
 	getPillarLectureScans(x.myDate);
+	getBMCDRScans(x.myDate);
 	getUsers();
 	makeTables();
 	modifyExportURL();
