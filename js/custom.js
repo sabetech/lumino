@@ -1,6 +1,7 @@
 
 //$root_url = "https://abs-att-back.000webhostapp.com/api/";
 let myRoot_url = "https://anagkazo.firstlovegallery.com/api/";
+let export_url = "https://anagkazo.firstlovegallery.com/anagkazo/attendance/export?";
 
 let x = {
 	myDateInternal: new Date().toISOString().substring(0, 10),
@@ -20,6 +21,7 @@ let x = {
 x.registerListener(function(val) {
 	//date has changed
 	fetchValues();
+	modifyExportURL();
 
 });
 
@@ -63,8 +65,12 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 	}
 })
 
-
-
+function modifyExportURL() {
+	$("#vision_export").attr('href', export_url + "date="+x.myDate+"&event=VISION_IN");
+	$("#pillar_export").attr('href', export_url + "date="+x.myDate+"&event=PILLAR_IN");
+	$("#bmcdr_export").attr('href', export_url + "date="+x.myDate+"&event=BMCDR_IN");
+	$("#wog_export").attr('href', export_url + "date="+x.myDate+"&event=WOG_IN");
+}
 
 function getUsers() {
 	$.ajax({
@@ -84,7 +90,7 @@ function getUsers() {
 	});
 }
 
-let visionTable;
+let visionTable, absenteesVisionTable, pillarLecturesTable, bmcdrTable, wogTable;
 function makeTables() {
 	 visionTable = $('#vision-lecture-table').DataTable({
 		"language": {
@@ -92,7 +98,6 @@ function makeTables() {
 		},
 		"ajax" : `${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`,
 		"columns": [
-			{ "data": "id" },
 			{ "data": "admission_no" },
 			{ "data": "name" },
 			{ "data": "time"},
@@ -103,18 +108,7 @@ function makeTables() {
 			selector: 'td:nth-child(2)'
 		},
 		responsive: true,
-		retrieve: true,
-		buttons: [
-			{
-				extend: 'csvHtml5',
-				text: 'Copy all data',
-				exportOptions: {
-					modifier: {
-						search: 'none'
-					}
-				}
-			}
-		]
+		retrieve: true		
 	});
 	
 	absenteesVisionTable = $('#vision-lecture-table-absentees').DataTable({
@@ -123,7 +117,6 @@ function makeTables() {
 		},
 		"ajax" : `${myRoot_url}anagkazo/visionlectures/absentees?date=${x.myDate}`,
 		"columns": [
-			{ "data": "id" },
 			{ "data": "admission_no" },
 			{ "data": "name" },
 			{ "data": "batch" }
@@ -132,30 +125,16 @@ function makeTables() {
 			selector: 'td:nth-child(2)'
 		},
 		responsive: true,
-		retrieve: true,
-		buttons: [
-			{
-				extend: 'csvHtml5',
-				text: 'Copy all data',
-				exportOptions: {
-					modifier: {
-						search: 'none'
-					}
-				}
-			}
-		]
+		retrieve: true
+		
 	});
 	
-
-
-
-	$('#pillar-lecture-table').DataTable({
+	pillarLecturesTable = $('#pillar-lecture-table').DataTable({
 		"language": {
 			"emptyTable": "Nobody's Present for the Date Selected"
 		},
 		"ajax" : `${myRoot_url}anagkazo/pillarlectures?date=${x.myDate}`,
 		"columns": [
-			{ "data": "id" },
 			{ "data": "admission_no" },
 			{ "data": "name" },
 			{ "data": "time"},
@@ -169,10 +148,48 @@ function makeTables() {
 		retrieve: true
 	});
 
+	bmcdrTable = $('#bmcdr-table').DataTable({
+		"language": {
+			"emptyTable": "Nobody's Present for the Date Selected"
+		},
+		"ajax" : `${myRoot_url}anagkazo/bmcdrattn?date=${x.myDate}`,
+		"columns": [
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "time"},
+			{ "data": "batch" },
+			{ "data": "date" }
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true,
+		retrieve: true
+	});
+
+	wogTable = $('#wog-table').DataTable({
+		"language": {
+			"emptyTable": "Nobody's Present for the Date Selected"
+		},
+		"ajax" : `${myRoot_url}anagkazo/wog?date=${x.myDate}`,
+		"columns": [
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "time"},
+			{ "data": "batch" },
+			{ "data": "date" }
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true,
+		retrieve: true
+		
+	});
+
 	$('#reg-student-table').DataTable({
 		"ajax" : `${myRoot_url}anagkazo/students`,
 		"columns": [
-			{ "data" : "id" },
 			{ "data": "admission_no" },
 			{ "data": "name" },
 			{ "data": "batch" },
@@ -233,6 +250,7 @@ function getValues() {
 	getPillarLectureScans(x.myDate);
 	getUsers();
 	makeTables();
+	modifyExportURL();
 }
 
 function fetchValues(){
@@ -241,5 +259,12 @@ function fetchValues(){
 	getPillarLectureScans(x.myDate);
 	
 	visionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`).load();
+	absenteesVisionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`).load();
+
+	pillarLecturesTable.ajax.url(`${myRoot_url}anagkazo/pillarlectures?date=${x.myDate}`).load();
+
+	bmcdrTable.ajax.url(`${myRoot_url}anagkazo/bmcdrattn?date=${x.myDate}`).load();
+
+	wogTable.ajax.url(`${myRoot_url}anagkazo/wog?date=${x.myDate}`).load();
 	
 }

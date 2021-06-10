@@ -49,10 +49,12 @@
         </div>
         <div class="divider"></div>
         <ul class="nav menu">
-            <li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+            <li class=""><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
             <li class=""><a href="reg_students.php"><em class="fa fa-list-alt">&nbsp;</em> Registered Students</a></li>
             <li class=""><a href="today_vision.php"><em class="fa fa-television">&nbsp;</em> Vision Lectures</a></li>
             <li class=""><a href="today_pillar.php"><em class="fa fa-youtube-play">&nbsp;</em> Pillar Lectures</a></li>
+            <li class=""><a href="today_bmcdr.php"><em class="fa fa-cog">&nbsp;</em> BMCDR</a></li>
+            <li class=""><a href="today_wog.php"><em class="fa fa-circle">&nbsp;</em> Waiting on God</a></li>
         </ul>
     </div>
     <!--/.sidebar-->

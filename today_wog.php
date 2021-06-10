@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Vision Lectures Attendance</h1>
+            <h1 class="page-header">Today's Attendance</h1>
         </div>
     </div>
     <!--/.row-->
@@ -35,12 +35,12 @@
                 <div class="panel panel-default">
                     <div class="panel-body tabs">
                         <ul class="nav nav-pills">
-                            <li class="active"><a href="#pilltab1" data-toggle="tab">Present for Vision Lecture</a></li>
-                            <li class=""><a id="vision_export" href="">Export</a></li>
+                            <li class="active"><a href="#pilltab1" data-toggle="tab">Waiting on God Attendance</a></li>
+                            <li class=""><a id="wog_export" href="">Export</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="pilltab1">
-                                <table class="table" id="vision-lecture-table">
+                                <table class="table" id="wog-table">
                                     <thead>
                                         <tr>
                                             <th scope="col">Index Number</th>
@@ -57,41 +57,6 @@
                                             <th scope="col">Time</th>
                                             <th scope="col">Batch</th>
                                             <th scope="col">Date</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/.panel-->
-            </div><!-- /.col-->
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body tabs">
-                        <ul class="nav nav-pills">
-                            <li class="active"><a href="#pilltab1" data-toggle="tab">Absentees Vision Lecture</a></li>
-                            <li class=""><a href="" data-toggle="tab">Export</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="pilltab1">
-                                <table class="table" id="vision-lecture-table-absentees">
-                                    <thead>
-                                        <tr>
-
-                                            <th scope="col">Index Number</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Batch</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-
-                                            <th scope="col">Index Number</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Batch</th>
-
                                         </tr>
                                     </tfoot>
 

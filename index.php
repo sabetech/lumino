@@ -56,13 +56,15 @@
                 </a>
             </div>
             <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-                <div class="panel panel-blue panel-widget border-right">
-                    <div class="row no-padding"><em class="fa fa-xl fa-play color-orange"></em>
-                        <i class="fa fa-spinner fa-spin loading-spin"></i>
-                        <div class="large" id="pillar-lecture-scan">-</div>
-                        <div class="text-muted">Today's Pillar Lecture</div>
+                <a href="today_pillar.php">
+                    <div class="panel panel-blue panel-widget border-right">
+                        <div class="row no-padding"><em class="fa fa-xl fa-play color-orange"></em>
+                            <i class="fa fa-spinner fa-spin loading-spin"></i>
+                            <div class="large" id="pillar-lecture-scan">-</div>
+                            <div class="text-muted">Today's Pillar Lecture</div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
                 <div class="panel panel-blue panel-widget border-right">
