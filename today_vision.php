@@ -66,42 +66,6 @@
                 </div>
                 <!--/.panel-->
             </div><!-- /.col-->
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body tabs">
-                        <ul class="nav nav-pills">
-                            <li class="active"><a href="#pilltab1" data-toggle="tab">Absentees Vision Lecture</a></li>
-                            <li class=""><a href="" data-toggle="tab">Export</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="pilltab1">
-                                <table class="table" id="vision-lecture-table-absentees">
-                                    <thead>
-                                        <tr>
-
-                                            <th scope="col">Index Number</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Batch</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-
-                                            <th scope="col">Index Number</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Batch</th>
-
-                                        </tr>
-                                    </tfoot>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/.panel-->
-            </div><!-- /.col-->
         </div>
     </div>
 
