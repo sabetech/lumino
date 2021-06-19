@@ -156,8 +156,9 @@ function makeTables() {
 		"columns": [
 			{ "data": "admission_no" },
 			{ "data": "name" },
-			{ "data": "time"},
+			{ "data": "time" },
 			{ "data": "batch" },
+			{ "data": "event" },
 			{ "data": "date" }
 		],
 		rowReorder: {

@@ -47,6 +47,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Time</th>
                                             <th scope="col">Batch</th>
+                                            <th scope="col">Sub Rotation</th>
                                             <th scope="col">Date</th>
                                         </tr>
                                     </thead>
@@ -56,6 +57,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Time</th>
                                             <th scope="col">Batch</th>
+                                            <th scope="col">Sub Rotation</th>
                                             <th scope="col">Date</th>
                                         </tr>
                                     </tfoot>
