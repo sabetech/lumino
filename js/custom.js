@@ -188,7 +188,7 @@ function makeTables() {
 		
 	});
 
-	anagkazo_live_Table = $('#anagkazo_live-table').DataTable({
+	anagkazoLiveTable = $('#anagkazo_live-table').DataTable({
 		"language": {
 			"emptyTable": "Nobody's Present for the Date Selected"
 		},
@@ -307,5 +307,7 @@ function fetchValues(){
 	bmcdrTable.ajax.url(`${myRoot_url}anagkazo/bmcdrattn?date=${x.myDate}`).load();
 
 	wogTable.ajax.url(`${myRoot_url}anagkazo/wog?date=${x.myDate}`).load();
+
+	anagkazoLiveTable.ajax.url(`${myRoot_url}anagkazo/anagkazo_live?date=${x.myDate}`).load();
 	
 }
