@@ -90,7 +90,7 @@ function getUsers() {
 	});
 }
 
-let visionTable, absenteesVisionTable, pillarLecturesTable, bmcdrTable, wogTable;
+let visionTable, absenteesVisionTable, pillarLecturesTable, bmcdrTable, wogTable, anagkazoLiveTable;
 function makeTables() {
 	 visionTable = $('#vision-lecture-table').DataTable({
 		"language": {
@@ -187,6 +187,27 @@ function makeTables() {
 		retrieve: true
 		
 	});
+
+	anagkazo_live_Table = $('#anagkazo_live-table').DataTable({
+		"language": {
+			"emptyTable": "Nobody's Present for the Date Selected"
+		},
+		"ajax" : `${myRoot_url}anagkazo/anagkazo_live?date=${x.myDate}`,
+		"columns": [
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "time"},
+			{ "data": "batch" },
+			{ "data": "date" }
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true,
+		retrieve: true
+		
+	});
+
 
 	$('#reg-student-table').DataTable({
 		"ajax" : `${myRoot_url}anagkazo/students`,
