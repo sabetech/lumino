@@ -90,7 +90,14 @@ function getUsers() {
 	});
 }
 
-let visionTable, absenteesVisionTable, pillarLecturesTable, bmcdrTable, wogTable, anagkazoLiveTable;
+let visionTable, 
+absenteesVisionTable, 
+pillarLecturesTable, 
+bmcdrTable, 
+wogTable, 
+anagkazoLiveTable, 
+lateVisionTable
+;
 function makeTables() {
 	 visionTable = $('#vision-lecture-table').DataTable({
 		"language": {
@@ -111,23 +118,8 @@ function makeTables() {
 		retrieve: true		
 	});
 	
-	absenteesVisionTable = $('#vision-lecture-table-absentees').DataTable({
-		"language": {
-			"emptyTable": "Nobody Present for the Date selected"
-		},
-		"ajax" : `${myRoot_url}anagkazo/visionlectures/absentees?date=${x.myDate}`,
-		"columns": [
-			{ "data": "admission_no" },
-			{ "data": "name" },
-			{ "data": "batch" }
-		],
-		rowReorder: {
-			selector: 'td:nth-child(2)'
-		},
-		responsive: true,
-		retrieve: true
-		
-	});
+	absenteesVisionTable = getAbsenteesTable("visionlectures/absentees", "vision-lecture-table-absentees");
+	lateVisionTable = getAbsenteesTable("visionlectures/late", "vision-lecture-table-late");
 	
 	pillarLecturesTable = $('#pillar-lecture-table').DataTable({
 		"language": {
@@ -280,9 +272,7 @@ function getBMCDRScans(date){
 }
 
 $(document).ready(function () {
-	console.log(x.myDate);
 	getValues();
-
 });
 
 function getValues() {
@@ -300,7 +290,7 @@ function fetchValues(){
 	getPillarLectureScans(x.myDate);
 	
 	visionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`).load();
-	absenteesVisionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures?date=${x.myDate}`).load();
+	absenteesVisionTable.ajax.url(`${myRoot_url}anagkazo/visionlectures/absentees?date=${x.myDate}`).load();
 
 	pillarLecturesTable.ajax.url(`${myRoot_url}anagkazo/pillarlectures?date=${x.myDate}`).load();
 
@@ -310,4 +300,27 @@ function fetchValues(){
 
 	anagkazoLiveTable.ajax.url(`${myRoot_url}anagkazo/anagkazo_live?date=${x.myDate}`).load();
 	
+}
+
+
+function getAbsenteesTable(url, table_id){
+//
+	return $('#'+table_id).DataTable({
+		"language": {
+			"emptyTable": "No Absentees for the date selected"
+		},
+		"ajax" : `${myRoot_url}anagkazo/${url}?date=${x.myDate}`,
+		"columns": [
+			{ "data": "admission_no" },
+			{ "data": "name" },
+			{ "data": "batch" }
+		],
+		rowReorder: {
+			selector: 'td:nth-child(2)'
+		},
+		responsive: true,
+		retrieve: true
+		
+	});
+
 }
