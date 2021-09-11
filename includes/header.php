@@ -56,6 +56,7 @@
             <li class=""><a href="today_bmcdr.php"><em class="fa fa-cog">&nbsp;</em> BMCDR</a></li>
             <li class=""><a href="today_wog.php"><em class="fa fa-circle">&nbsp;</em> Waiting on God</a></li>
             <li class=""><a href="anagkazo_live.php"><em class="fa fa-fire">&nbsp;</em> Anagkazo Live</a></li>
+            <li class=""><a href="reports.php"><em class="fa fa-file">&nbsp;</em> Reports </a></li>
         </ul>
     </div>
     < <!--/.sidebar-->

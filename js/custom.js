@@ -37,6 +37,17 @@ $('.input-group.date').datepicker()
 		x.myDate = e.date.toISOString().split('T')[0];
     });
 
+
+$('#single-date-click-show-date-range').click(function() {
+	$("#single-date").hide();
+	$("#date-range").show();
+});
+
+$("#date-range-click-show-single-date").click(function() {
+	$("#single-date").show();
+	$("#date-range").hide();
+})
+
 !function ($) {	
     $(document).on("click","ul.nav li.parent > a ", function(){          
         $(this).find('em').toggleClass("fa-minus");      
@@ -324,3 +335,24 @@ function getAbsenteesTable(url, table_id){
 	});
 
 }
+
+$("#all-time").click(() => {
+	$(".date-range").attr('disabled', typeof $(".date-range").attr('disabled') === 'undefined' );
+});
+
+(function(){
+	//you initialilze some things here
+	$.get(myRoot_url + "admin_app/classes", (response) => {
+		response.forEach((classItem) => {
+			$("#classes").append(`<option id=${classItem.id}>${classItem.class}</option>`);
+		});
+	});
+
+})();
+
+$("#sync-students").click(() => {
+	$("#sync-students").html('<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" aria-hidden="true"></i> Loading ...');
+	$.get(myRoot_url + "anagkazo/fedena/pull-students", (response) => {
+		$("#sync-students").html('Sync Students From Fedena');
+	});
+})

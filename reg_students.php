@@ -13,8 +13,12 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Registered Students</h1>
+            <h1 class="page-header">
+                Registered Students
+                <button class="pull-right btn btn-primary" id="sync-students">Sync Students From Fedena</button>
+            </h1>
         </div>
+
     </div>
     <!--/.row-->
 
