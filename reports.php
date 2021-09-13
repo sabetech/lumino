@@ -66,11 +66,11 @@
                         <div>
                             <div class="dropdown">
                                 <select class="form-control" name="event">
-                                    <option>Vision Lectures</option>
-                                    <option>Pillar Lectures</option>
-                                    <option>BMCDR</option>
-                                    <option>Waiting on God</option>
-                                    <option>Anagkazo Live</option>
+                                    <option value="VISION_IN">Vision Lectures</option>
+                                    <option value="PILLAR_IN">Pillar Lectures</option>
+                                    <option value="BMCDR_IN">BMCDR</option>
+                                    <option value="WOG_IN">Waiting on God</option>
+                                    <option value="ANAGKAZO_LIVE_IN">Anagkazo Live</option>
                                 </select>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                         <div>
                             <div class="dropdown">
                                 <select class="form-control" id="classes" name="classes">
-                                    <option id="all">All Classes</option>
+                                    <option value="all">All Classes</option>
                                 </select>
                             </div>
                         </div>

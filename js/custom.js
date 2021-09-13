@@ -220,11 +220,13 @@ function makeTables() {
 			{ "data": "batch" },
 			{ "data": "created_at" }
 		],
+		select: true,
+		
 		rowReorder: {
 			selector: 'td:nth-child(2)'
 		},
 		responsive: true
-	});
+	})
 }
 
 function getVisionLectureScans(date) {
@@ -344,7 +346,7 @@ $("#all-time").click(() => {
 	//you initialilze some things here
 	$.get(myRoot_url + "admin_app/classes", (response) => {
 		response.forEach((classItem) => {
-			$("#classes").append(`<option id=${classItem.id}>${classItem.class}</option>`);
+			$("#classes").append(`<option value="${classItem.class}">${classItem.class}</option>`);
 		});
 	});
 
