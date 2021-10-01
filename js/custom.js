@@ -357,4 +357,4 @@ $("#sync-students").click(() => {
 	$.get(myRoot_url + "anagkazo/fedena/pull-students", (response) => {
 		$("#sync-students").html('Sync Students From Fedena');
 	});
-})
+});

@@ -71,10 +71,15 @@
                                     <option value="BMCDR_IN">BMCDR</option>
                                     <option value="WOG_IN">Waiting on God</option>
                                     <option value="ANAGKAZO_LIVE_IN">Anagkazo Live</option>
+                                    <option value="FOUNDATIONAL_IN">Foundational Lectures</option>
+                                    <option value="TUTORIAL_IN">Tutorials</option>
                                 </select>
                             </div>
                         </div>
                     </div>
+                    <label>
+                        <input type="checkbox" id="use-timestamps" name="usetimestamps"> Use Timestamps
+                    </label>
                     <!--/.panel-->
                 </div><!-- /.col-->
             </div>
