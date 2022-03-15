@@ -6,7 +6,7 @@
             <li><a href="#">
                     <em class="fa fa-home"></em>
                 </a></li>
-            <li class="active">Attendance</li>
+            <li class="active">Reports</li>
         </ol>
     </div>
     <!--/.row-->
@@ -20,7 +20,9 @@
     <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports">
         <div class="panel panel-container">
             <div class="row">
+
                 <div class="col-xs-6 col-md-5 col-lg-5" style="padding: 2em;">
+                    <h3>Generate Attendance Report</h3>
                     <div id="date-range">
                         <label>From:</label>
                         <div class="input-group date" data-provide="datepicker">
@@ -75,7 +77,7 @@
                                     <option value="TUTORIAL_IN">Tutorials</option>
                                     <option value="4AM_PRAYER_IN">4AM Prayer</option>
                                     <option value="SUNDAY_SERVICE_IN">Sunday Service</option>
-                                    <option value="AD_CONFERENCE_IN">AD Conference</option>
+                                    <option value="AD_CONFERENCE_DAY_2_SESSION_3_IN">AD Conference</option>
                                 </select>
                             </div>
                         </div>
@@ -93,7 +95,67 @@
                     <div class="panel panel-default">
                         <div>
                             <div class="dropdown">
-                                <select class="form-control" id="classes" name="classes">
+                                <select class="form-control classes" id="classes" name="classes">
+                                    <option value="all">All Classes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.panel-->
+                </div><!-- /.col-->
+                <button style="float:right;margin:20px" type="submit">Export</button>
+            </div>
+        </div>
+    </form>
+
+    <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/percentages">
+        <div class="panel panel-container">
+
+            <div class="row">
+                <div class="col-xs-6 col-md-5 col-lg-5" style="padding: 2em;">
+                    <h3>Generate Attendance Percentages</h3>
+                    <div id="date-range">
+                        <label>From:</label>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" name="fromdate" class="form-control date-range" id="date-val-from">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        <label>To</label>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" name="todate" class="form-control date-range" id="date-val-to">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div>
+                            <div class="dropdown">
+                                <select class="form-control" name="event">
+                                    <option value="VISION_IN">Vision Lectures</option>
+                                    <option value="PILLAR_IN">Pillar Lectures</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-->
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div>
+                            <div class="dropdown">
+                                <select class="form-control classes" id="classes" name="classes">
                                     <option value="all">All Classes</option>
                                 </select>
                             </div>

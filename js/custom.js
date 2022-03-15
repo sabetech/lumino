@@ -346,7 +346,7 @@ $("#all-time").click(() => {
 	//you initialilze some things here
 	$.get(myRoot_url + "admin_app/classes", (response) => {
 		response.forEach((classItem) => {
-			$("#classes").append(`<option value="${classItem.class}">${classItem.class}</option>`);
+			$(".classes").append(`<option value="${classItem.class}">${classItem.class}</option>`);
 		});
 	});
 

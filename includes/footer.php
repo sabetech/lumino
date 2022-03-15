@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12">
-        <p class="back-link">Copyright 2021 <a href="https://anagkazobibleministrytrainingcentre.org">ABMTC</a></p>
+        <p class="back-link">Copyright 2022 <a href="https://anagkazobibleministrytrainingcentre.org">ABMTC</a></p>
     </div>
 </div>
 <!--/.row-->
