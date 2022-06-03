@@ -77,7 +77,7 @@
                                     <option value="TUTORIAL_IN">Tutorials</option>
                                     <option value="4AM_PRAYER_IN">4AM Prayer</option>
                                     <option value="SUNDAY_SERVICE_IN">Sunday Service</option>
-                                    <option value="AD_CONFERENCE_DAY_2_SESSION_3_IN">AD Conference</option>
+                                    <option value="ANAGKAZO_ENCOUNTER_SERVICE_IN">Anagkazo Encounter Service</option>
                                 </select>
                             </div>
                         </div>
