@@ -75,7 +75,7 @@
                                     <option value="ANAGKAZO_LIVE_IN">Anagkazo Live</option>
                                     <option value="FOUNDATIONAL_IN">Foundational Lectures</option>
                                     <option value="TUTORIAL_IN">Tutorials</option>
-                                    <option value="4AM_PRAYER_IN">4AM Prayer</option>
+                                    <option value="4AM_PRAYERS_IN">4AM Prayer</option>
                                     <option value="SUNDAY_SERVICE_IN">Sunday Service</option>
                                     <option value="ANAGKAZO_ENCOUNTER_SERVICE_IN">Anagkazo Encounter Service</option>
                                 </select>
