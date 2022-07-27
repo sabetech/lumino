@@ -108,7 +108,7 @@
         </div>
     </form>
 
-    <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/percentages">
+    <form method="GET" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/percentages">
         <div class="panel panel-container">
 
             <div class="row">
