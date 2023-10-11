@@ -107,8 +107,40 @@
             </div>
         </div>
     </form>
-
+    
     <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/percentages">
+        <div class="panel panel-container">
+
+            <div class="row">
+                <div class="col-xs-6 col-md-5 col-lg-5" style="padding: 2em;">
+                    <h3>Generate Attendance Range Report</h3>
+                    <div id="date-range">
+                        <label>From:</label>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" name="fromdate" class="form-control date-range" id="date-val-from">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        <label>To</label>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" name="todate" class="form-control date-range" id="date-val-to">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <button style="float:right;margin:20px" type="submit">Export</button>
+            </div>
+        </div>
+    </form>
+
+
+    <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/attendance-score">
         <div class="panel panel-container">
 
             <div class="row">
