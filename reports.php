@@ -108,7 +108,7 @@
         </div>
     </form>
     
-    <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/percentages">
+    <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/attendance-score">
         <div class="panel panel-container">
 
             <div class="row">
@@ -133,6 +133,8 @@
 
                 </div>
             </div>
+
+
             <div class="row">
                 <button style="float:right;margin:20px" type="submit">Export</button>
             </div>
@@ -140,7 +142,7 @@
     </form>
 
 
-    <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/attendance-score">
+    <form method="POST" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports/percentages">
         <div class="panel panel-container">
 
             <div class="row">
