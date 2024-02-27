@@ -77,10 +77,10 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 })
 
 function modifyExportURL() {
-	$("#vision_export").attr('href', export_url + "date="+x.myDate+"&event=VISION_IN");
-	$("#pillar_export").attr('href', export_url + "date="+x.myDate+"&event=PILLAR_IN");
-	$("#bmcdr_export").attr('href', export_url + "date="+x.myDate+"&event=BMCDR_IN");
-	$("#wog_export").attr('href', export_url + "date="+x.myDate+"&event=WOG_IN");
+	$("#vision_export").attr('href', export_url + "date="+x.myDate+"&event=VISION");
+	$("#pillar_export").attr('href', export_url + "date="+x.myDate+"&event=PILLAR");
+	$("#bmcdr_export").attr('href', export_url + "date="+x.myDate+"&event=BMCDR");
+	$("#wog_export").attr('href', export_url + "date="+x.myDate+"&event=WOG");
 }
 
 function getUsers() {

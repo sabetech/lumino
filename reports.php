@@ -68,16 +68,16 @@
                         <div>
                             <div class="dropdown">
                                 <select class="form-control" name="event">
-                                    <option value="VISION_IN">Vision Lectures</option>
-                                    <option value="PILLAR_IN">Pillar Lectures</option>
-                                    <option value="BMCDR_IN">BMCDR</option>
-                                    <option value="WOG_IN">Waiting on God</option>
-                                    <option value="ANAGKAZO_LIVE_IN">Anagkazo Live</option>
-                                    <option value="FOUNDATIONAL_IN">Foundational Lectures</option>
-                                    <option value="TUTORIAL_IN">Tutorials</option>
-                                    <option value="4AM_PRAYERS_IN">4AM Prayer</option>
-                                    <option value="SUNDAY_SERVICE_IN">Sunday Service</option>
-                                    <option value="ANAGKAZO_ENCOUNTER_SERVICE_IN">Anagkazo Encounter Service</option>
+                                    <option value="VISION">Vision Lectures</option>
+                                    <option value="PILLAR">Pillar Lectures</option>
+                                    <option value="BMCDR">BMCDR</option>
+                                    <option value="WOG">Waiting on God</option>
+                                    <option value="ANAGKAZO_LIVE">Anagkazo Live</option>
+                                    <option value="FOUNDATIONAL">Foundational Lectures</option>
+                                    <option value="TUTORIAL">Tutorials</option>
+                                    <option value="4AM_PRAYERS">4AM Prayer</option>
+                                    <option value="SUNDAY_SERVICE">Sunday Service</option>
+                                    <option value="ANAGKAZO_ENCOUNTER_SERVICE">Anagkazo Encounter Service</option>
                                 </select>
                             </div>
                         </div>
@@ -174,8 +174,8 @@
                         <div>
                             <div class="dropdown">
                                 <select class="form-control" name="event">
-                                    <option value="VISION_IN">Vision Lectures</option>
-                                    <option value="PILLAR_IN">Pillar Lectures</option>
+                                    <option value="VISION">Vision Lectures</option>
+                                    <option value="PILLAR">Pillar Lectures</option>
                                 </select>
                             </div>
                         </div>
