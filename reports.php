@@ -17,7 +17,7 @@
         </div>
     </div>
     <!--/.row-->
-    <form method="GET" action="https://anagkazo.firstlovegallery.com/api/anagkazo/attendance/reports">
+    <form method="GET" action="https://anagkazo-backend.firstlovegallery.com/public/anagkazo/attendance/reports">
         <div class="panel panel-container">
             <div class="row">
 
