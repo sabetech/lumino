@@ -1,7 +1,7 @@
 
 //$root_url = "https://abs-att-back.000webhostapp.com/api/";
-let myRoot_url = "https://anagkazo.firstlovegallery.com/api/";
-let export_url = "https://anagkazo.firstlovegallery.com/anagkazo/attendance/export?";
+let myRoot_url = "https://anagkazo-backend.firstlovegallery.com/api/";
+let export_url = "https://anagkazo-backend.firstlovegallery.com/anagkazo/attendance/export?";
 
 let x = {
 	myDateInternal: new Date().toISOString().substring(0, 10),
