@@ -1,7 +1,7 @@
 
 //$root_url = "https://abs-att-back.000webhostapp.com/api/";
-let myRoot_url = "https://anagkazo-backend.firstlovegallery.com/api/";
-let export_url = "https://anagkazo-backend.firstlovegallery.com/anagkazo/attendance/export?";
+let myRoot_url = "https://anagkazo-backend.firstlovegallery.com/public/api/admin";
+let export_url = "https://anagkazo-backend.firstlovegallery.com/public/anagkazo/attendance/export?";
 
 let x = {
 	myDateInternal: new Date().toISOString().substring(0, 10),
@@ -344,7 +344,7 @@ $("#all-time").click(() => {
 
 (function(){
 	//you initialilze some things here
-	$.get(myRoot_url + "admin_app/classes", (response) => {
+	$.get(myRoot_url + "/admin/classes", (response) => {
 		response.forEach((classItem) => {
 			$(".classes").append(`<option value="${classItem.class}">${classItem.class}</option>`);
 		});
