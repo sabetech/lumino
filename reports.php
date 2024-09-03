@@ -78,6 +78,7 @@
                                     <option value="4AM_PRAYERS">4AM Prayer</option>
                                     <option value="SUNDAY_SERVICE">Sunday Service</option>
                                     <option value="ANAGKAZO_ENCOUNTER_SERVICE">Anagkazo Encounter Service</option>
+                                    <option value="SPECIAL_SERVICE_ARRIVALS">Special Service Arrvials</option>
                                     <option value="SPECIAL_SERVICE_OPENING_ASSEMBLY">Special Service Opening Assempbly</option>
                                     
                                 </select>
